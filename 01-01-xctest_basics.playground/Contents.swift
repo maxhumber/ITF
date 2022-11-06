@@ -44,7 +44,8 @@ class EverythingServiceAndLifeCycleExampleTests: XCTestCase {
     func testUnlessEmoji42Throws() throws {
         print("2️⃣")
         let service = EverythingService()
-        let result = try service.unlessEmoji42("🌌")
+//        let result = try service.unlessEmoji42("🌌")
+        let result = try service.unlessEmoji42("X")
         let expected = 42
         XCTAssert(result == expected) // 🚩 Red Flag!
     }
@@ -59,3 +60,4 @@ class EverythingServiceAndLifeCycleExampleTests: XCTestCase {
 }
 
 EverythingServiceAndLifeCycleExampleTests.defaultTestSuite.run()
+

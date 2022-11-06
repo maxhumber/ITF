@@ -2,7 +2,7 @@
 
 
 
-00 - **Introduction** (10 minutes) [T+0:10]
+00 - **Introduction** (15 minutes) [T+0:00]
 
 ```
 Slides
@@ -15,7 +15,7 @@ Slides
 
 
 
-01 - **Getting Started with XCTest** (20 minutes) [T+0:30]
+01 - **Getting Started with XCTest** (25 minutes) [T+0:00]
 
 ```
 Basics
@@ -31,11 +31,12 @@ FizzBuzz
 
 
 
-02 - **Testing Asynchronous Code** (20 minutes) [T+0:50]
+02 - **Testing Asynchronous Code** (10 minutes) [T+0:00]
 
 ```
 Pretend this is SDK code we don't own...
 Old completion code to hit network
+Stringify
 ```
 
 - New Structured Concurrency (async/await)
@@ -46,16 +47,19 @@ Old completion code to hit network
 
 
 
-**Break** (5 minutes) [T+0:55]
+**Break** (5 minutes) [T+0:00]
 
 
 
-03 - **Protocols and “Code Replaceability”** (20 minutes) [T+1:15]
+03 - **Protocols and “Code Replaceability”** (20 minutes) [T+1:00]
+
+> Detour!
 
 ```
+Equatable
+Identifiable
 ArrayLiteral
-CaseIterable
-Custom
+DictionaryLiteral
 Matchable
 ```
 
