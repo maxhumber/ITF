@@ -1,12 +1,21 @@
 import Foundation
 
-public struct TVShow: Codable {
+public struct TVShow: Codable, Equatable {
     public var name: String
     public var network: String?
     public var status: String
-    public var startDate: Date
+    public var startDate: Date?
     public var endDate: Date?
-    public var thumbnail: URL
+    public var thumbnail: URL?
+    
+    public init(name: String, network: String? = nil, status: String, startDate: Date? = nil, endDate: Date? = nil, thumbnail: URL? = nil) {
+        self.name = name
+        self.network = network
+        self.status = status
+        self.startDate = startDate
+        self.endDate = endDate
+        self.thumbnail = thumbnail
+    }
     
     private enum CodingKeys: String, CodingKey {
         case name

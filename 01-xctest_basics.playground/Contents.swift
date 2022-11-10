@@ -20,7 +20,7 @@ class EverythingService {
     }
 }
 
-// Run service as though it were in a VC/VM
+// Run service as though it were in a VC/VM...
 run(false) {
     let service = EverythingService()
     let result = service.always42()

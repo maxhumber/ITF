@@ -1,4 +1,4 @@
-// https://gist.github.com/V8tr/3d28b3468bb60b02c5134d8d6ad78c43
+// Source: https://gist.github.com/V8tr/3d28b3468bb60b02c5134d8d6ad78c43
 
 import UIKit
 
