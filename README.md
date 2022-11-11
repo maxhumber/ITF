@@ -4,6 +4,8 @@
 
 ⚠️ 07 - **Testing Views with XCUITest** (20 minutes)
 
+Change ViewModel?
+
 - Setting initial states
 - Finding elements to test
 - Simulating user interaction
