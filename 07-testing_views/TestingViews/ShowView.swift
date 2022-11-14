@@ -14,7 +14,7 @@ struct ShowView: View {
                 }
                 .onDelete(perform: viewModel.delete)
             }
-            .navigationTitle("Popular")
+            .navigationTitle(viewModel.title)
             .onAppear {
                 viewModel.load()
             }

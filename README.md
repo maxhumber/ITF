@@ -2,23 +2,36 @@
 
 
 
-⚠️ 07 - **Testing Views with XCUITest** (20 minutes)
+**Modules**
 
-Change ViewModel?
+- 01- XCTest Basics
 
-- Setting initial states
-- Finding elements to test
-- Simulating user interaction
-- Recording tests
-- Exercise: Write some UI tests for a View
+- 02 - Asynchronous Code
+
+- 03 - Protocols
+
+- 04 - Networking!
+
+- 05 - Test Doubles
+
+- 06 - SwiftUI Basics
+
+- 07 - XCUITest Basics
+
+- 08 - Code Organization
 
 
 
-⚠️  08 - **MVVM and “Code Organization”** (20 minutes)
+**Course Objectives**
 
-- ObservableObject + @Published
-- @EnvironmentObject + @StateObject + @ObservedObject
-- Managing Access Control
-- Code Separation/Modularization
-- Folder Structure and Organization
-- Exercise: Extract out a ViewModel from a View and write some tests for it
+- How to write “unit” and “UI” tests with XCTest and XCUITest
+- How to leverage protocols in the creation of “test doubles”
+- How to effectively use async/await and test asynchronous code
+
+
+
+**Course Outcomes**
+
+- Create new views with, and adapt existing views into SwiftUI
+- Confidently write new features and screens with MVVM
+- Use TDD and REPL-DD where appropriate!

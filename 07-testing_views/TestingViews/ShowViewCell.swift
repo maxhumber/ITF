@@ -23,13 +23,12 @@ struct ShowViewCell: View {
             }
             .clipShape(Circle())
             .padding(3)
-            .background(
-                Circle()
-                    .foregroundColor(starred ? .yellow : .clear)
-            )
+            .background(imageBackgroundOutline)
             .onTapGesture(count: 2) {
                 starred.toggle()
             }
+            .accessibilityAddTraits(.isButton)
+            .accessibilityIdentifier("Star Button - \(show.name)")
             VStack(alignment: .leading) {
                 Text(show.name)
                 Text(show.network ?? "")
@@ -37,6 +36,18 @@ struct ShowViewCell: View {
             }
         }
         .padding(.vertical, 3)
+    }
+    
+    @ViewBuilder var imageBackgroundOutline: some View {
+        if starred {
+            Circle()
+                .foregroundColor(.yellow)
+                .accessibilityIdentifier("Is Starred - \(show.name)")
+        } else {
+            Circle()
+                .foregroundColor(.clear)
+                .accessibilityIdentifier("Not Starred - \(show.name)")
+        }
     }
 }
 

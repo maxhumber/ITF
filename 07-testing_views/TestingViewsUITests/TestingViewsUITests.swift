@@ -1,34 +1,56 @@
 import XCTest
 
+/// Click-based functions
+///
+// tap()
+// doubleTap()
+// twoFingerTap()
+// tap(withNumberOfTaps: UInt, numberOfTouches: UInt)
+// press(forDuration: TimeInterval)
+// press(forDuration: TimeInterval, thenDragTo: XCUIElement)
+
+/// Generic UI interactions
+///
+// swipeLeft()
+// swipeRight()
+// swipeUp()
+// swipeDown()
+// pinch(withScale: CGFloat, velocity: CGFloat)
+// rotate(CGFloat, withVelocity: CGFloat)
+
 final class TestingViewsUITests: XCTestCase {
+    var app: XCUIApplication!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        app = XCUIApplication()
+        app.launchArguments = ["enable-testing"]
         app.launch()
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testExample2() throws {
-        
+    func testCheckTheFlash() throws {
+        let flash = app.staticTexts["The Flash"].exists
+        XCTAssertTrue(flash)
+    }
+
+    func testRecordedInteractions() throws {
+        // Press Record Here
         let collectionViewsQuery = XCUIApplication().collectionViews
-        collectionViewsQuery.children(matching: .other).element(boundBy: 3).swipeDown()
-        collectionViewsQuery.children(matching: .cell).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element.swipeLeft()
+        let element = collectionViewsQuery.children(matching: .cell).element(boundBy: 2).children(matching: .other).element(boundBy: 1).children(matching: .other).element
+        element.swipeLeft()
         collectionViewsQuery.buttons["Delete"].tap()
-        
-        let image = collectionViewsQuery.children(matching: .cell).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1)
-        image.tap()
-        image.tap()
-        
+        let arrow = app.staticTexts["Arrow"].exists
+        XCTAssertFalse(arrow)
+    }
+    
+    func testManualElements() throws {
+        let identifier = "Star Button - Game of Thrones"
+        let element = (
+            app
+                .descendants(matching: .any)
+                .matching(NSPredicate(format: "identifier == '\(identifier)'"))
+                .firstMatch
+        )
+        XCTAssertTrue(element.exists)
     }
 }

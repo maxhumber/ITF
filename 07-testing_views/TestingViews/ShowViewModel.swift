@@ -4,14 +4,22 @@ class ShowViewModel: ObservableObject {
     @Published var shows = [Show]()
     @Published var error: Error? = nil
     @Published var loading = false
+    @Published var title: String
     
     private var page = 1
     private let service = ShowService()
     
+    init() {
+        if CommandLine.arguments.contains("enable-testing") {
+            self.title = "Testing"
+        } else {
+            self.title = "Popular"
+        }
+    }
+    
     @MainActor func load() {
         if self.loading { return }
         Task {
-            print("page: \(1)")
             defer { self.loading = false }
             do {
                 self.loading = true
