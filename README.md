@@ -1,4 +1,10 @@
-### ⭕️ ITF: iOS Testing Fundamentals
+### ⭕️ iOS Testing Fundamentals
+
+
+
+**API**
+
+- [Episodate](https://www.episodate.com/api)
 
 
 
@@ -6,7 +12,7 @@
 
 - 01- XCTest Basics
 
-- 02 - Asynchronous Code
+- 02 - Async Code
 
 - 03 - Protocols
 
