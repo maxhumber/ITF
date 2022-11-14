@@ -127,7 +127,7 @@ protocol ShowServicing {
     func popular(_ page: Int) async throws -> [TVShow]
 }
 
-run(true) {
+run(false) {
     class ShowService: ShowServicing {
         private let host = "www.episodate.com"
         private let networking: Networking

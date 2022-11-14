@@ -352,6 +352,6 @@ class UpdatedViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 }
 
-run(true) {
+run(false) {
     PlaygroundPage.current.setLiveView(UpdatedViewController.preview)
 }
